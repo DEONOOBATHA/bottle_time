@@ -1,0 +1,19 @@
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background-light);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-right: 300px; /* Width of sidepanel */
+    transition: var(--transition-default);
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      margin-right: 0;
+      padding: 1rem;
+    }
+  }

@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #2E7D32;    /* Dark green */
+    --primary-hover: #43A047;    /* Lighter green */
+    --background-light: #FFFFFF;  /* White */
+    --surface-light: #F1F8E9;    /* Very light green */
+    --surface-medium: #C8E6C9;   /* Light green */
+    --text-primary: #1B5E20;     /* Dark green */
+    --text-secondary: #558B2F;   /* Medium green */
+    --transition-default: all 0.3s ease;
+  }
+  
+  .welcome-container {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Background video/image styling */
+  .welcome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .welcome-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Fallback for image if video isn't used */
+  .welcome-background.image {
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+  }
+  
+  /* Overlay to ensure content readability */
+  .welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+  
+  .welcome-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .welcome-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .mission-statement {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: var(--transition-default);
+    border: 1px solid rgba(46, 125, 50, 0.1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(46, 125, 50, 0.15);
+    background: white;
+  }
+  
+  .feature-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-default);
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1);
+  }
+  
+  .feature-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .auth-column {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+  }
+  
+  .auth-column h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+  
+  .auth-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    margin: 0.75rem 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-default);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .register-btn {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+  }
+  
+  .register-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+  }
+  
+  .login-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+  }
+  
+  .login-btn:hover {
+    background-color: var(--surface-light);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .welcome-content {
+      padding: 2rem;
+      width: 95%;
+      margin: 10px;
+    }
+  
+    .welcome-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .mission-statement {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  
+    .features-grid {
+      gap: 1.5rem;
+    }
+  
+    .auth-buttons {
+      gap: 1.5rem;
+    }
+  
+    .auth-column {
+      min-width: 250px;
+    }
+  }

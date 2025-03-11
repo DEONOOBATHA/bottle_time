@@ -1,0 +1,76 @@
+/* App.css */
+/* Reset CSS */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #2E7D32;    /* Dark green */
+  --primary-hover: #43A047;    /* Lighter green */
+  --background-light: #FFFFFF;  /* White */
+  --surface-light: #F1F8E9;    /* Very light green */
+  --surface-medium: #C8E6C9;   /* Light green */
+  --text-primary: #1B5E20;     /* Dark green */
+  --text-secondary: #558B2F;   /* Medium green */
+  --transition-default: all 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Public pages */
+.welcome-container,
+.auth-container {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* App container for authenticated pages */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  margin-right: 300px; /* Width of sidepanel */
+  transition: var(--transition-default);
+  width: calc(100vw - 300px);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-right: 0;
+    padding: 1rem;
+    width: 100vw;
+  }
+}
