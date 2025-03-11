@@ -156,7 +156,7 @@ const DelivererDashboard = () => {
 
         if (!window.google) {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA2UKVSgyH6hMx36wnNxmErw6HelJaAUP4&libraries=marker`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=no_key&libraries=marker`;
             script.onload = initMap;
             document.head.appendChild(script);
         } else {
